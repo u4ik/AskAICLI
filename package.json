@@ -1,0 +1,47 @@
+{
+    "name": "Rsrc",
+    "version": "0.0.0",
+    "license": "MIT",
+    "bin": "cli.js",
+    "engines": {
+        "node": ">=10"
+    },
+    "scripts": {
+        "test": "xo && ava"
+    },
+    "files": [
+        "cli.js",
+        "ui.js"
+    ],
+    "dependencies": {
+        "child_process": "^1.0.2",
+        "diskspace": "^2.0.0",
+        "fs": "0.0.1-security",
+        "import-jsx": "^4.0.0",
+        "ink": "^3.0.9",
+        "ink-spinner": "^4.0.2",
+        "meow": "^9",
+        "os": "^0.1.2",
+        "os-utils": "0.0.14",
+        "react": "^17.0.2"
+    },
+    "devDependencies": {},
+    "ava": {
+        "babel": true,
+        "require": [
+            "@babel/register"
+        ]
+    },
+    "babel": {
+        "presets": [
+            "@babel/preset-env",
+            "@babel/preset-react"
+        ]
+    },
+    "xo": {
+        "extends": "xo-react",
+        "rules": {
+            "react/prop-types": "off"
+        }
+    }
+}

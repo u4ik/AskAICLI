@@ -1,34 +1,24 @@
 'use strict';
-const React = require('react');
-const { Text, Box } = require('ink');
-
 const child = require('child_process');
-
+const { cpuUsage } = require('process');
 let diskspace = require('diskspace');
 const fs = require('fs');
 let os = require('os-utils');
 let _os = require('os');
-const { cpuUsage } = require('process');
-
-
+const React = require('react');
+const { Text, Box } = require('ink');
 
 const App = () => {
-
 	const [cpuInfo, setCpuInfo] = React.useState('')
 	const [diskInfo, setDiskInfo] = React.useState('')
 	const [memInfo, setMemInfo] = React.useState('')
 
-
 	React.useEffect(() => {
-
 		// checkCPUFree()
 		checkSys()
-
 	}, [])
 
-
 	let cacheArr = [];
-
 	let currentPath = __dirname + '/cache.json';
 
 	const readCacheConfig = () => {
@@ -141,11 +131,8 @@ const App = () => {
 				callback(perc);
 			else
 				callback((1 - perc));
-
 		}, 100);
 	}
-
-	// checkSys()
 
 	return (
 		<>

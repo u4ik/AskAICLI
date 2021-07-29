@@ -9,7 +9,7 @@ const ui = importJsx('./ui');
 
 const cli = meow(`
 	Usage
-	  $ Rsrc
+	  $ sysrsrc
 
 	Currently in development!
 `);

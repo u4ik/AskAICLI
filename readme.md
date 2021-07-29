@@ -1,6 +1,6 @@
 # SysRsrc
 
-![Image of Rsrc](./assets/RsrcDemo.png)
+![Image of Rsrc](./assets/SysRsrcDemo.png)
 
 
 CURRENTLY IN DEVELOPMENT**

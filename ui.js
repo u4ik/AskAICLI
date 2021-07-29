@@ -7,23 +7,35 @@ let os = require('os-utils');
 let _os = require('os');
 const React = require('react');
 const { render, useFocus, Text, Box } = require('ink');
-
-
-const Example = () => {
-	const { isFocused } = useFocus();
-
-	return <Text>{isFocused ? 'I am focused' : 'I am not focused'}</Text>;
-};
-
-render(<Example />);
-
-
+const Divider = require('ink-divider');
+const Gradient = require('ink-gradient')
+const BigText = require('ink-big-text');
+// const Ascii = require('ink-ascii')
+const Spinner = require('ink-spinner')
+const cliSpinners = require('cli-spinners');
 
 const App = () => {
 	const [cpuInfo, setCpuInfo] = React.useState('');
 	const [diskInfo, setDiskInfo] = React.useState({});
 	const [diskArr, setDiskArr] = React.useState([]);
 	const [memInfo, setMemInfo] = React.useState('');
+	const [font, setFont] = React.useState('');
+
+
+	const [fonts, setFonts] = React.useState([
+		'block',
+		'slick',
+		'tiny',
+		'grid',
+		'pallet',
+		'shade',
+		'simple',
+		'simpleBlock',
+		'3d',
+		'simple3d',
+		'chrome',
+		'huge',
+	])
 
 	React.useEffect(() => {
 		setInterval(() => {
@@ -32,6 +44,7 @@ const App = () => {
 
 		}, 500)
 	}, [])
+
 
 	let cacheArr = [];
 	let currentPath = __dirname + '/cache.json';
@@ -75,7 +88,7 @@ const App = () => {
 
 			if (cacheArr.length == 0) {
 				let captureDrives = stdout.split('\r\r\n').filter(value => /[A-Za-z]:/.test(value)).map(value => value.trim())
-				fs.writeFile(currentPath, JSON.stringify({ cache: captureDrives }), function(err) {
+				fs.writeFile(currentPath, JSON.stringify({ cache: captureDrives }), function (err) {
 					if (err) {
 						return console.log(err);
 					}
@@ -88,7 +101,7 @@ const App = () => {
 	};
 
 	function getFreeSpace(path) {
-		diskspace.check(path, function(err, result) {
+		diskspace.check(path, function (err, result) {
 			let percent = Math.floor(result.used / result.total * 100)
 			let totalByteReducer = Math.floor(result.total / 1000000000)
 			let tbr = totalByteReducer.toString()
@@ -136,7 +149,7 @@ const App = () => {
 		let startIdle = stats1.idle;
 		let startTotal = stats1.total;
 
-		setTimeout(function() {
+		setTimeout(function () {
 			let stats2 = getCPUInfo();
 			let endIdle = stats2.idle;
 			let endTotal = stats2.total;
@@ -161,12 +174,21 @@ const App = () => {
 		})
 	}
 
+
 	return (
 		<>
 			<Box justifyContent='center' flexDirection='column' borderColor='blueBright' borderStyle='round'>
+				{/* <Text color="green">
+					<Spinner type="dots" />
+					{' Loading'}
+				</Text> */}
+				<Box justifyContent='center' alignItems='center' flexDirection='column' borderColor='blueBright' borderStyle='round' >
+					{/* <Ascii  /> */}
+					<Gradient name="mind">
+						<BigText font={fonts[2]} lineHeight={1} text="Rsrc" />
+					</Gradient>
 
-				<Box justifyContent='center' borderColor='blueBright' borderStyle='round' >
-					<Text color="blueBright" >Resource Monitor 1.0</Text>
+					{/* <Divider title={'Resource Monitor 1.0'} dividerColor='blue' /> */}
 				</Box>
 
 				<Box justifyContent='center'>

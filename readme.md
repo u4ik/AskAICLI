@@ -1,4 +1,4 @@
-# Rsrc
+# SysRsrc
 
 ![Image of Rsrc](./assets/RsrcDemo.png)
 
@@ -10,15 +10,15 @@ Allows you to view system resources with a global command in a terminal.
 ## Install
 
 ```bash
-$ npm install --global Rsrc
+$ npm i --global sysrsrc
 ```
 
 ## CLI
 
 ```
-$ Rsrc --help
+$ sysrsrc --help
 
   Usage
-    $ Rsrc
+    $ sysrsrc
 
   Currently in development

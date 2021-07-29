@@ -20,6 +20,7 @@ const App = () => {
 	const [diskArr, setDiskArr] = React.useState([]);
 	const [memInfo, setMemInfo] = React.useState('');
 	const [font, setFont] = React.useState('');
+	const [count, setCount] = React.useState(0);
 
 
 	const [fonts, setFonts] = React.useState([
@@ -41,8 +42,8 @@ const App = () => {
 		setInterval(() => {
 			checkSys();
 			checkFreeMem();
-
-		}, 500)
+			setCount(prev => prev+1)
+		}, 1000)
 	}, [])
 
 
@@ -185,9 +186,9 @@ const App = () => {
 				<Box justifyContent='center' alignItems='center' flexDirection='column' borderColor='blueBright' borderStyle='round' >
 					{/* <Ascii  /> */}
 					<Gradient name="mind">
-						<BigText font={fonts[2]} lineHeight={1} text="Rsrc" />
+						<BigText font={fonts[2]} lineHeight={1} text="Sys-Rsrc" />
 					</Gradient>
-
+						{/* <Text>{fonts.indexOf(fonts[count])}</Text> */}
 					{/* <Divider title={'Resource Monitor 1.0'} dividerColor='blue' /> */}
 				</Box>
 

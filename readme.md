@@ -22,5 +22,5 @@ $ sysrsrc --help
   Usage
     $ sysrsrc
 
-  If you see a specific drive being read, you may delete that drive's path letter in cache.json.
+	If you wish to disable a specific drive from being read, you may delete that drive's path letter in cache.json.
 

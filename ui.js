@@ -42,7 +42,7 @@ const App = () => {
 		setInterval(() => {
 			checkSys();
 			checkFreeMem();
-			setCount(prev => prev+1)
+			//setCount(prev => prev+1)
 		}, 1000)
 	}, [])
 
@@ -89,7 +89,7 @@ const App = () => {
 
 			if (cacheArr.length == 0) {
 				let captureDrives = stdout.split('\r\r\n').filter(value => /[A-Za-z]:/.test(value)).map(value => value.trim())
-				fs.writeFile(currentPath, JSON.stringify({ cache: captureDrives }), function (err) {
+				fs.writeFile(currentPath, JSON.stringify({ cache: captureDrives }), function(err) {
 					if (err) {
 						return console.log(err);
 					}
@@ -102,7 +102,7 @@ const App = () => {
 	};
 
 	function getFreeSpace(path) {
-		diskspace.check(path, function (err, result) {
+		diskspace.check(path, function(err, result) {
 			let percent = Math.floor(result.used / result.total * 100)
 			let totalByteReducer = Math.floor(result.total / 1000000000)
 			let tbr = totalByteReducer.toString()
@@ -150,7 +150,7 @@ const App = () => {
 		let startIdle = stats1.idle;
 		let startTotal = stats1.total;
 
-		setTimeout(function () {
+		setTimeout(function() {
 			let stats2 = getCPUInfo();
 			let endIdle = stats2.idle;
 			let endTotal = stats2.total;
@@ -188,7 +188,7 @@ const App = () => {
 					<Gradient name="mind">
 						<BigText font={fonts[2]} lineHeight={1} text="Sys-Rsrc" />
 					</Gradient>
-						{/* <Text>{fonts.indexOf(fonts[count])}</Text> */}
+					{/* <Text>{fonts.indexOf(fonts[count])}</Text> */}
 					{/* <Divider title={'Resource Monitor 1.0'} dividerColor='blue' /> */}
 				</Box>
 

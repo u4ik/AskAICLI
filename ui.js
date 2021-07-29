@@ -6,16 +6,31 @@ const fs = require('fs');
 let os = require('os-utils');
 let _os = require('os');
 const React = require('react');
-const { Text, Box } = require('ink');
+const { render, useFocus, Text, Box } = require('ink');
+
+
+const Example = () => {
+	const { isFocused } = useFocus();
+
+	return <Text>{isFocused ? 'I am focused' : 'I am not focused'}</Text>;
+};
+
+render(<Example />);
+
+
 
 const App = () => {
-	const [cpuInfo, setCpuInfo] = React.useState('')
-	const [diskInfo, setDiskInfo] = React.useState('')
-	const [memInfo, setMemInfo] = React.useState('')
+	const [cpuInfo, setCpuInfo] = React.useState('');
+	const [diskInfo, setDiskInfo] = React.useState({});
+	const [diskArr, setDiskArr] = React.useState([]);
+	const [memInfo, setMemInfo] = React.useState('');
 
 	React.useEffect(() => {
-		// checkCPUFree()
-		checkSys()
+		setInterval(() => {
+			checkSys();
+			checkFreeMem();
+
+		}, 500)
 	}, [])
 
 	let cacheArr = [];
@@ -60,7 +75,7 @@ const App = () => {
 
 			if (cacheArr.length == 0) {
 				let captureDrives = stdout.split('\r\r\n').filter(value => /[A-Za-z]:/.test(value)).map(value => value.trim())
-				fs.writeFile(currentPath, JSON.stringify({ cache: captureDrives }), function (err) {
+				fs.writeFile(currentPath, JSON.stringify({ cache: captureDrives }), function(err) {
 					if (err) {
 						return console.log(err);
 					}
@@ -73,7 +88,7 @@ const App = () => {
 	};
 
 	function getFreeSpace(path) {
-		diskspace.check(path, function (err, result) {
+		diskspace.check(path, function(err, result) {
 			let percent = Math.floor(result.used / result.total * 100)
 			let totalByteReducer = Math.floor(result.total / 1000000000)
 			let tbr = totalByteReducer.toString()
@@ -86,11 +101,15 @@ const App = () => {
 				totalByteReducer = tbr + 'GB'
 			}
 			if (percent) {
-				setDiskInfo(path + `\\ ` + totalByteReducer + ' ' + `${percent} %`);
+				if (!diskInfo[path]) {
+					diskInfo[path] = `\\ ` + totalByteReducer + ' ' + `${percent} %`
+					diskArr.push(path)
+				}
+				// console.log(diskInfo)
+				// setDiskInfo(path + `\\ ` + totalByteReducer + ' ' + `${percent} %`);
 			}
 		});
 	};
-
 	function getCPUInfo(callback) {
 		let cpus = _os.cpus();
 		let user = 0;
@@ -112,13 +131,12 @@ const App = () => {
 			'total': total
 		};
 	}
-
 	function getCPUUsage(callback, free) {
 		let stats1 = getCPUInfo();
 		let startIdle = stats1.idle;
 		let startTotal = stats1.total;
 
-		setTimeout(function () {
+		setTimeout(function() {
 			let stats2 = getCPUInfo();
 			let endIdle = stats2.idle;
 			let endTotal = stats2.total;
@@ -133,17 +151,41 @@ const App = () => {
 				callback((1 - perc));
 		}, 100);
 	}
+	function driveDisplayMap() {
+		return diskArr.map((i, idx) => {
+			return (
+				<Box key={idx}>
+					<Text color="green">{i + diskInfo[i]}</Text>
+				</Box>
+			)
+		})
+	}
 
 	return (
 		<>
-			<Box>
-				<Text color="green">{cpuInfo}</Text>
-			</Box>
-			<Box>
-				<Text color="green">{diskInfo}</Text>
-			</Box>
-			<Box>
-				<Text color="green">{memInfo}</Text>
+			<Box justifyContent='center' flexDirection='column' borderColor='blueBright' borderStyle='round'>
+
+				<Box justifyContent='center' borderColor='blueBright' borderStyle='round' >
+					<Text color="blueBright" >Resource Monitor 1.0</Text>
+				</Box>
+
+				<Box justifyContent='center'>
+
+
+					<Box flexDirection='column' alignItems='center' paddingRight='1vw'>
+						<Box >
+							<Text color="green">{cpuInfo}</Text>
+						</Box>
+						<Box>
+							<Text color="green">{memInfo}</Text>
+						</Box>
+					</Box>
+
+					<Box flexDirection='column' alignItems='center' paddingLeft='1vw'>
+						{driveDisplayMap()}
+					</Box>
+
+				</Box>
 			</Box>
 		</>
 	)

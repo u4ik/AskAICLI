@@ -1,6 +1,6 @@
 {
     "name": "sysrsrc",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "license": "MIT",
     "bin": "cli.js",
     "engines": {

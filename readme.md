@@ -2,7 +2,7 @@
 
 <!-- ![Image of Rsrc](https://i.ibb.co/kxbDf0k/Sys-Rsrc-Demo.png) -->
 <p align='center'>
-<img width="auto" height="auto" src="https://i.ibb.co/kxbDf0k/Sys-Rsrc-Demo.png" style="border-radius:1vw">
+<img width="auto" height="auto" src="https://i.ibb.co/kxbDf0k/Sys-Rsrc-Demo.png" style="border-radius:5px">
 </p>
 CURRENTLY IN DEVELOPMENT*
 

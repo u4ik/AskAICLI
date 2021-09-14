@@ -48,5 +48,23 @@
         "rules": {
             "react/prop-types": "off"
         }
-    }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/u4ik/SysRsrc.git"
+    },
+    "bugs": {
+        "url": "https://github.com/u4ik/SysRsrc/issues"
+    },
+    "homepage": "https://github.com/u4ik/SysRsrc/blob/main/README.md",
+    "keywords": [
+        "sysrsrc",
+        "npm",
+        "package",
+        "u4ik",
+        "resource",
+        "sysmonitor",
+        "rsrcchecker",
+        "cliresource"
+    ]
 }

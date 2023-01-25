@@ -1,6 +1,6 @@
 {
-    "name": "askaiprompt",
-    "version": "0.0.1",
+    "name": "open-ai-cli-prompt",
+    "version": "0.0.2",
     "license": "MIT",
     "bin": {
         "ask": "index.js"

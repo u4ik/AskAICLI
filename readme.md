@@ -12,24 +12,27 @@
 <img src='https://img.shields.io/npm/l/sysrsrc.svg?style=flat'>
 </div> -->
 
-CURRENTLY IN DEVELOPMENT\*
+<!-- CURRENTLY IN DEVELOPMENT\* -->
 
 Allows you to view system resources with a global command in a terminal.
+
+Secret passkey required for use, which will be asked on initial setup.
+Key will be stored with package config.
 
 ## Install
 
 ```bash
-$ npm i --global askai
+$ npm i --global open-ai-cli-prompt
 ```
 
-<!-- ## CLI
+<!-- $ askai --help -->
+
+## CLI
 
 ```
-$ askai --help
 
   Usage
     $ ask
 
 
-
-``` -->
+```

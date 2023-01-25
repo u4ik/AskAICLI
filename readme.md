@@ -1,34 +1,35 @@
-# SysRsrc
+# AskAi
 
-<!-- ![Image of Rsrc](https://i.ibb.co/kxbDf0k/Sys-Rsrc-Demo.png) -->
+![Image of Rsrc](https://i.ibb.co/kxbDf0k/Sys-Rsrc-Demo.png)
+
 <p align='center'>
 <img width="auto" height="auto" src="https://i.ibb.co/kxbDf0k/Sys-Rsrc-Demo.png" style="border-radius:5px">
 </p>
 
-<div align=center>
+<!-- <div align=center>
 <img src='https://img.shields.io/npm/v/sysrsrc.svg?style=flat'>
 <img src='https://img.shields.io/npm/dt/sysrsrc.svg?style=flat'>
 <img src='https://img.shields.io/npm/l/sysrsrc.svg?style=flat'>
-</div>
+</div> -->
 
-CURRENTLY IN DEVELOPMENT*
+CURRENTLY IN DEVELOPMENT\*
 
 Allows you to view system resources with a global command in a terminal.
 
 ## Install
 
 ```bash
-$ npm i --global sysrsrc
+$ npm i --global askai
 ```
 
 ## CLI
 
 ```
-$ sysrsrc --help
+$ askai --help
 
   Usage
-    $ sysrsrc
+    $ ask
 
-	If you wish to disable a specific drive from being read,
-  you may delete that drive's path letter in cache.json.
 
+
+```

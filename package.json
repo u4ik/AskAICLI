@@ -36,6 +36,14 @@
         "react": "^17.0.2",
         "terminal-link": "^3.0.0"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/u4ik/AskAICLI.git"
+    },
+    "bugs": {
+        "url": "https://github.com/u4ik/AskAICLI/issues"
+    },
+    "homepage": "https://github.com/u4ik/AskAICLI/blob/main/README.md",
     "keywords": [
         "askai",
         "npm",

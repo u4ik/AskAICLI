@@ -1,5 +1,5 @@
 {
-    "name": "askai",
+    "name": "askaiprompt",
     "version": "0.0.1",
     "license": "MIT",
     "bin": {
@@ -49,8 +49,7 @@
         "npm",
         "package",
         "u4ik",
-        "openai",
-        "aiprompt",
+        "openai", prompt "aiprompt",
         "askaiopenai",
         "aiask"
     ]

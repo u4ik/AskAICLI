@@ -49,7 +49,9 @@
         "npm",
         "package",
         "u4ik",
-        "openai", prompt "aiprompt",
+        "openai",
+        "prompt",
+        "aiprompt",
         "askaiopenai",
         "aiask"
     ]

@@ -14,7 +14,7 @@
 
 <!-- CURRENTLY IN DEVELOPMENT\* -->
 
-Allows you to view system resources with a global command in a terminal.
+Allows you to interact with OpenAI's chat service, via an API call.
 
 Secret passkey required for use, which will be asked on initial setup.
 Key will be stored with package config.

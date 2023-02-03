@@ -5,12 +5,15 @@
 <p align='center'>
 <!-- <img width="auto" height="auto" src="https://i.ibb.co/kxbDf0k/Sys-Rsrc-Demo.png" style="border-radius:5px"> -->
 </p>
+<div align=center>
 
-<!-- <div align=center>
-<img src='https://img.shields.io/npm/v/sysrsrc.svg?style=flat'>
-<img src='https://img.shields.io/npm/dt/sysrsrc.svg?style=flat'>
-<img src='https://img.shields.io/npm/l/sysrsrc.svg?style=flat'>
-</div> -->
+<img  src='https://img.shields.io/npm/v/open-ai-cli-prompt.svg?style=flat'>
+
+<img  src='https://img.shields.io/npm/dt/open-ai-cli-prompt.svg?style=flat'>
+
+<img  src='https://img.shields.io/npm/l/open-ai-cli-prompt.svg?style=flat'>
+
+</div>
 
 <!-- CURRENTLY IN DEVELOPMENT\* -->
 

@@ -1,6 +1,6 @@
 {
     "name": "open-ai-cli-prompt",
-    "version": "0.0.4",
+    "version": "0.1.0",
     "license": "MIT",
     "bin": {
         "ask": "index.js"

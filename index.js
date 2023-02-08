@@ -21,7 +21,7 @@ const commandPrompts = {
 		choices: [
 			{ title: '🗨️ Start', description: '', value: 'Start' },
 			{ title: 'ℹ️ About', description: '', value: 'About' },
-			{ title: '🛠️ Setup', description: 'Initial Setup Required', value: 'Setup' },
+			{ title: '🛠️  Setup', description: 'Initial Setup Required', value: 'Setup' },
 			{ title: '❌ Delete Config File', description: 'Delete the config file', value: 'DelConfig' },
 		].filter(i => {
 			if (!fs.existsSync(`${__dirname}` + "/config.json" || !JSON.parse(fs.readFileSync(`${__dirname}` + '/config.json')).cache[0])) {

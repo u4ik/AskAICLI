@@ -3,6 +3,7 @@
 <!-- ![Image of Rsrc](https://i.ibb.co/kxbDf0k/Sys-Rsrc-Demo.png) -->
 
 <p align='center'>
+<img width="auto" height="auto" src="https://i.ibb.co/5kqkGt9/Ask-AI-demo2.png" style="border-radius:5px">
 <img width="auto" height="auto" src="https://i.ibb.co/7g67xHY/Ask-AI-demo1.png" style="border-radius:5px">
 </p>
 <div align=center>
